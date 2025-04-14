@@ -1,6 +1,8 @@
 package com.qlik.qtcmt.mcp.controller;
 
 
+import com.qlik.qtcmt.mcp.dto.ProjectAnalysisResponse;
+import com.qlik.qtcmt.mcp.dto.ProjectLoadResponse;
 import com.qlik.qtcmt.mcp.provider.McpToolProvider;
 import com.qlik.qtcmt.mcp.dto.ProjectAnalysisRequest;
 import com.qlik.qtcmt.mcp.dto.ProjectLoadRequest;

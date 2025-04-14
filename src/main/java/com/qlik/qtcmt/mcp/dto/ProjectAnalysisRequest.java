@@ -7,6 +7,6 @@ import lombok.Data;
 @Data
 public class ProjectAnalysisRequest {
     private String projectId;
-    private String analysisType;
+    private ANALYSIS_TYPE analysisType;
     private boolean deepAnalysis;
 }

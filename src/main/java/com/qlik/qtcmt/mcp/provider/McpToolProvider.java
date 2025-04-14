@@ -1,10 +1,12 @@
 package com.qlik.qtcmt.mcp.provider;
 
 import com.qlik.qtcmt.mcp.dto.ProjectAnalysisRequest;
+import com.qlik.qtcmt.mcp.dto.ProjectAnalysisResponse;
 import com.qlik.qtcmt.mcp.dto.ProjectLoadRequest;
+import com.qlik.qtcmt.mcp.dto.ProjectLoadResponse;
 import com.qlik.qtcmt.mcp.service.McpMetricsService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.ai.annotation.Tool;
+import org.springframework.ai.tool.annotation.Tool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

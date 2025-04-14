@@ -1,0 +1,34 @@
+
+spring:
+  application:
+    name: qtcmt-mcp
+
+  datasource:
+    url: jdbc:postgresql://localhost:5437/vectordb
+    username: admin
+    password: admin
+  ai:
+    vectorstore:
+      pgvector:
+      index-type: HNSW
+      distance-type: COSINE_DISTANCE
+      dimensions: 1536
+      max-document-batch-size: 10000 # Optional: Maximum number of documents per batch
+    mcp:
+      server:
+        enabled: true
+
+
+# External API Configuration
+#external.api.load.url=https://example.com/api/load-project
+#external.api.analysis.url=https://example.com/api/analyse-project
+
+# Previous production properties remain the same, add:
+
+# Actuator endpoints
+#management.endpoints.web.exposure.include=health,info,metrics,prometheus
+#management.endpoint.health.show-details=always
+#management.prometheus.metrics.export.enabled=true
+
+# Custom application metrics
+#management.metrics.tags.application=qtcmt-mcp-server
