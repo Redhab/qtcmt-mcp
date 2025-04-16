@@ -12,7 +12,7 @@ import org.springframework.web.client.RestClient;
 public class ProjectLoadService {
     private final RestClient restClient;
 
-    @Value("${external.api.load.url}")
+    @Value("${qtcmt.api.load.url}")
     private String loadProjectApiUrl;
 
     @Autowired

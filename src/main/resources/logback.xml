@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+    <property name="pattern" value="%d %green([%thread]) %highlight(%level) %logger{36} - %msg%n" />
+
+
+    <!-- Stop output INFO at start -->
+    <statusListener class="ch.qos.logback.core.status.NopStatusListener"/>
+
+    <!-- Appender -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d %green([%thread]) %highlight(%level) %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="APP-LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${user.dir}/logs/qtcmt-mcp.log</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- rollover daily -->
+            <fileNamePattern>logs/archived/qtcmt-mcp.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <!-- each archived file, size max 20MB -->
+            <maxFileSize>500MB</maxFileSize>
+            <!-- total size of all archive files, if total size > 3GB, it will delete old archived file -->
+            <totalSizeCap>10GB</totalSizeCap>
+            <!-- 60 days to keep -->
+            <maxHistory>60</maxHistory>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>${pattern}</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Loggers -->
+    <!--    To set the log level from java System Property-->
+    <!--    <logger name="org.springframework" level="${SPRING_QTCMT_LOG_LEVEL:-ERROR}">-->
+    <!--        <appender-ref ref="HIBERNATE-LOG"/>-->
+    <!--    </logger>-->
+
+    <logger name="org.springframework" level="${SPRING_QTCMT_MCP_LOG_LEVEL:-ERROR}"/>
+    <logger name="com.qlik.qtcmt.mcp" level="${QTCMT_MCP_ALL_LEVEL:-ERROR}"/>
+    <root level="OFF">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="APP-LOG"/>
+    </root>
+    -->
+</configuration>
+
+

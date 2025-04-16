@@ -12,7 +12,7 @@ import org.springframework.web.client.RestClient;
 public class ProjectAnalysisService {
     private final RestClient restClient;
 
-    @Value("${external.api.analysis.url}")
+    @Value("${qtcmt.api.analysis.url}")
     private String analysisProjectApiUrl;
 
     @Autowired

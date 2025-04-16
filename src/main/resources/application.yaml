@@ -17,8 +17,18 @@ spring:
     mcp:
       server:
         enabled: true
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      chat:
+        options:
+          model: GPT-4o
 
-
+qtcmt:
+  api:
+    analysis:
+      url: https://localhost:7777/qtcmt
+    load:
+      url: https://localhost:7777/qtcmt
 # External API Configuration
 #external.api.load.url=https://example.com/api/load-project
 #external.api.analysis.url=https://example.com/api/analyse-project
